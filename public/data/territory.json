@@ -1,0 +1,556 @@
+[
+    {
+        "nro": 1,
+        "streets": [
+            "Av. Luro",
+            "Olegario Andrade",
+            "Magnasco",
+            "Ruta 21"
+        ]
+    },
+    {
+        "nro": 2,
+        "streets": [
+            "Olegario Andrade",
+            "Ricardo Gutiérrez",
+            "Magnasco",
+            "Ruta 21"
+        ]
+    },
+    {
+        "nro": 3,
+        "streets": [
+            "Ricardo Gutiérrez",
+            "Luis Van Beethoven",
+            "Magnasco",
+            "Ruta 21"
+        ]
+    },
+    {
+        "nro": 4,
+        "streets": [
+            "Luis Van Beethoven",
+            "Garcia Merou",
+            "Magnasco",
+            "Ruta 21"
+        ]
+    },
+    {
+        "nro": 5,
+        "streets": [
+            "Garcia Merou",
+            "Rodney",
+            "Soberania Nacional",
+            "Ruta 21"
+        ]
+    },
+    {
+        "nro": 6,
+        "streets": [
+            "Av. Luro",
+            "Luis Van Beethoven",
+            "P.M.Obligado",
+            "Magnasco"
+        ]
+    },
+    {
+        "nro": 7,
+        "streets": [
+            "Luis Van Beethoven",
+            "Garcia Merou",
+            "Jose Hernandez",
+            "Magnasco"
+        ]
+    },
+    {
+        "nro": 8,
+        "streets": [
+            "Garcia Merou",
+            "Rodney",
+            "Soberania Nacional",
+            "Magnasco"
+        ]
+    },
+    {
+        "nro": 9,
+        "streets": [
+            "Garcia Merou",
+            "Rodney",
+            "Magnasco",
+            "P.M.Obligado"
+        ]
+    },
+    {
+        "nro": 10,
+        "streets": [
+            "Av. Luro",
+            "Luis Van Beethoven",
+            "P.M.Obligado",
+            "Jose Hernandez"
+        ]
+    },
+    {
+        "nro": 11,
+        "streets": [
+            "Garcia Merou",
+            "Rodney",
+            "P.M.Obligado",
+            "Jose Hernandez"
+        ]
+    },
+    {
+        "nro": 12,
+        "streets": [
+            "Rodney",
+            "Risso Patrón",
+            "Ruta 21",
+            "Jose Hernandez"
+        ]
+    },
+    {
+        "nro": 13,
+        "streets": [
+            "Risso Patrón",
+            "Reaño",
+            "Ruta 21",
+            "Jose Hernandez"
+        ]
+    },
+    {
+        "nro": 14,
+        "streets": [
+            "Reaño",
+            "Raulies",
+            "Ruta 21",
+            "Valentin Gomez"
+        ]
+    },
+    {
+        "nro": 15,
+        "streets": [
+            "Rodney",
+            "Reaño",
+            "Valentin Gomez",
+            "Jose Hernandez"
+        ]
+    },
+    {
+        "nro": 16,
+        "streets": [
+            "Raulies",
+            "Del Tejar",
+            "Ruta 21",
+            "Jose Hernandez"
+        ]
+    },
+    {
+        "nro": 17,
+        "streets": [
+            "Raulies",
+            "Del Tejar",
+            "Jose Hernandez",
+            "Valentin Gomez"
+        ]
+    },
+    {
+        "nro": 18,
+        "streets": [
+            "Recuero",
+            "Raulet",
+            "Valentin Gomez",
+            "C.Encina"
+        ]
+    },
+    {
+        "nro": 19,
+        "streets": [
+            "Raulet",
+            "Del Tejar",
+            "Valentin Gomez",
+            "C.Encina"
+        ]
+    },
+    {
+        "nro": 20,
+        "streets": [
+            "Av. Luro",
+            "O.Andrade",
+            "Jose Hernandez",
+            "Martin Coronado"
+        ]
+    },
+    {
+        "nro": 21,
+        "streets": [
+            "Av. Luro",
+            "Ricardo Gutiérrez",
+            "Jose Hernandez",
+            "Martin Coronado"
+        ]
+    },
+    {
+        "nro": 22,
+        "streets": [
+            "Ricardo Gutiérrez",
+            "Luis Van Beethoven",
+            "Jose Hernandez",
+            "Martin Coronado"
+        ]
+    },
+    {
+        "nro": 23,
+        "streets": [
+            "Luis Van Beethoven",
+            "Garcia Merou",
+            "Jose Hernandez",
+            "Martin Coronado"
+        ]
+    },
+    {
+        "nro": 24,
+        "streets": [
+            "Av. Luro",
+            "O.Andrade",
+            "Martin Coronado",
+            "Voissin"
+        ]
+    },
+    {
+        "nro": 25,
+        "streets": [
+            "O.Andrade",
+            "Garcia Merou",
+            "Martin Coronado",
+            "R. de los LLanos"
+        ]
+    },
+    {
+        "nro": 26,
+        "streets": [
+            "O.Andrade",
+            "Garcia Merou",
+            "R. de los LLanos",
+            "Watt"
+        ]
+    },
+    {
+        "nro": 27,
+        "streets": [
+            "O.Andrade",
+            "Garcia Merou",
+            "Watt",
+            "Voissin"
+        ]
+    },
+    {
+        "nro": 28,
+        "streets": [
+            "Garcia Merou",
+            "Rodney",
+            "Jose Hernandez",
+            "Valentin Gomez"
+        ]
+    },
+    {
+        "nro": 29,
+        "streets": [
+            "Garcia Merou",
+            "Rodney",
+            "Valentin Gomez",
+            "C.Encina"
+        ]
+    },
+    {
+        "nro": 30,
+        "streets": [
+            "Rodney",
+            "V. de Rocha",
+            "Martin Coronado",
+            "Valentin Gomez"
+        ]
+    },
+    {
+        "nro": 31,
+        "streets": [
+            "V. de Rocha",
+            "Recuero",
+            "C.Encina",
+            "Valentin Gomez"
+        ]
+    },
+    {
+        "nro": 32,
+        "streets": [
+            "Garcia Merou",
+            "Santa Catalina",
+            "C.Encina",
+            "R. de los LLanos"
+        ]
+    },
+    {
+        "nro": 33,
+        "streets": [
+            "Santa Catalina",
+            "Salvigny",
+            "C.Encina",
+            "R. de los LLanos"
+        ]
+    },
+    {
+        "nro": 34,
+        "streets": [
+            "Salvigny",
+            "Rodney",
+            "C.Encina",
+            "R. de los LLanos"
+        ]
+    },
+    {
+        "nro": 35,
+        "streets": [
+            "Rodney",
+            "Risso Patrón",
+            "Martin Coronado",
+            "R. de los LLanos"
+        ]
+    },
+    {
+        "nro": 36,
+        "streets": [
+            "V. de Rocha",
+            "Recuero",
+            "C.Encina",
+            "Martin Coronado"
+        ]
+    },
+    {
+        "nro": 37,
+        "streets": [
+            "Recuero",
+            "Raulies",
+            "C.Encina",
+            "R. de los LLanos"
+        ]
+    },
+    {
+        "nro": 38,
+        "streets": [
+            "Rodney",
+            "Recuero",
+            "Martin Coronado"
+        ]
+    },
+    {
+        "nro": 39,
+        "streets": [
+            "Raulies",
+            "Rocamora",
+            "C.Encina",
+            "Victor Martinez"
+        ]
+    },
+    {
+        "nro": 40,
+        "streets": [
+            "Rocamora",
+            "Del Tejar",
+            "Ipela",
+            "Victor Martinez"
+        ]
+    },
+    {
+        "nro": 41,
+        "streets": [
+            "V. de Rocha",
+            "Rocamora",
+            "Victor Martinez",
+            "Watt"
+        ]
+    },
+    {
+        "nro": 42,
+        "streets": [
+            "V. de Rocha",
+            "Del Tejar",
+            "Victor Martinez",
+            "Fardman"
+        ]
+    },
+    {
+        "nro": 43,
+        "streets": [
+            "Fardman",
+            "Ruta 3"
+        ]
+    },
+    {
+        "nro": 44,
+        "streets": [
+            "Garcia Merou",
+            "Santa Catalina",
+            "R. de los LLanos",
+            "Salado"
+        ]
+    },
+    {
+        "nro": 45, 
+        "streets": [
+            "Santa Catalina",
+            "Salvigny",
+            "R. de los LLanos",
+            "Salado"   
+        ]
+    },
+    {
+        "nro": 46,
+        "streets": [
+            "Salvigny",
+            "Rodney",
+            "R. de los LLanos",
+            "Salado"
+        ]
+    },
+    {
+        "nro": 47,
+        "streets": [
+            "Av. Luro",
+            "Olegario Andrade",
+            "Voissin",
+            "Fournier"
+        ]
+    },
+    {
+        "nro": 48,
+        "streets": [
+            "O. Andrade",
+            "Garcia Merou",
+            "Voissin",
+            "Salado"
+        ]
+    },
+    {
+        "nro": 49,
+        "streets": [
+            "O.Andrade",
+            "Garcia Merou",
+            "Salado",
+            "Fardman"
+        ]
+    },
+    {
+        "nro": 50,
+        "streets": [
+            "O. Andrade",
+            "Garcia Merou",
+            "Fardman",
+            "Fournier"
+        ]
+    },
+    {
+        "nro": 51,
+        "streets": [
+            "Garcia Merou",
+            "Santa Catalina",
+            "Salado",
+            "Inca"
+        ]
+    },
+    {
+        "nro": 52,
+        "streets": [
+            "Santa Catalina",
+            "Salvigny",
+            "Av. Luro",
+            "Salado",
+            "Inca"
+        ]
+    },
+    {
+        "nro": 53,
+        "streets": [
+            "Salvigny",
+            "Rodney",
+            "Salado",
+            "Inca"
+        ]
+    },
+    {
+        "nro": 54,
+        "streets": [
+            "Rodney",
+            "Risso Patrón",
+            "Inca"
+        ]
+    },
+    {
+        "nro": 55,
+        "streets": [
+            "Risso Patrón",
+            "Recuero",
+            "Fournier"
+        ]
+    },
+    {
+        "nro": 56,
+        "streets": [
+            "Risso Patrón",
+            "Recuero",
+            "Fournier",
+            "Ruta 3"
+        ]
+    },
+    {
+        "nro": 57,
+        "streets": [
+            "Santa Catalina",
+            "Risso Patrón",
+            "Inca",
+            "Ruta 3"
+        ]
+    },
+    {
+        "nro": 58,
+        "streets": [
+            "Garcia Merou",
+            "Santa Catalina",
+            "Inca",
+            "Ruta 3"
+        ]
+    },
+    {
+        "nro": 59,
+        "streets": [
+            "Av. Luro",
+            "O.Andrade",
+            "Fournier",
+            "Herrera"
+        ]
+    },
+    {
+        "nro": 60,
+        "streets": [
+            "O.Andrade",
+            "Luis Van Beethoven",
+            "Fournier",
+            "Herrera"
+        ]
+    },
+    {
+        "nro": 61,
+        "streets": [
+            "Luis Van Beethoven",
+            "Garcia Merou",
+            "Fournier",
+            "Herrera"
+        ]
+    },
+    {
+        "nro": 62,
+        "streets": [
+            "Av. Luro",
+            "Garcia Merou",
+            "Ruta 3",
+            "Herrera"       
+        ]
+    }
+]
