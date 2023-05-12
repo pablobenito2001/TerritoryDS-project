@@ -20,7 +20,7 @@
             </div>
         </div>
         <div>
-            <RouterButton to="edit">Ver Más</RouterButton>
+            <button class="Task-button" @click="emitValue">Eliminar</button>
         </div>
     </li>       
 </template>
@@ -29,8 +29,6 @@
     import dayjs from 'dayjs';
     import relativeTime from 'dayjs/plugin/relativeTime';
     import 'dayjs/locale/es';
-
-    import RouterButton from '../button/RouterButton.vue';
 
     dayjs.locale('es');
     dayjs.extend(relativeTime);
@@ -43,8 +41,17 @@
         house: string;
         expiration: string;
         territory: {nro: number, streets: string[]};
+        id: number;
     }
     const props = defineProps<Props>();
+
+    const emit = defineEmits<{
+    (e: 'index', terr: number): void
+    }>();
+
+    function emitValue(e: Event){
+        emit('index', props.territory.nro)
+    }
 </script>
 <styles lang='scss' scoped>
     .Task{
@@ -97,6 +104,26 @@
             color: var(--alpha-white);
             font-size: 1em;
             text-transform: capitalize;
+        }
+        &-button{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: .625rem 2.1875rem;
+            font-size: 1.25em;
+            color: var(--white);
+            border: solid 2px var(--white);
+            border-radius: 6.25rem;
+            cursor: pointer;
+            transition: background-color 0.6s cubic-bezier(0.075, 0.82, 0.165, 1), color 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+            &:hover{
+                background-color: var(--white);
+                color: var(--black);
+            }
+            @media screen and (max-width: 800px) {
+                padding: .625rem 1.25rem ;
+                font-size: 1.1em;
+            }
         }
     }
 </styles>
