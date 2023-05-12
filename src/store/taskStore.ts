@@ -42,7 +42,13 @@ export const useTaskStore = defineStore('task', () => {
             }
         })
         res.forEach(elem => {
-            elem.items.sort((a, b) => dayjs(a.hour).isAfter(dayjs(b.hour)) ? 1 : -1)
+            elem.items.sort((a, b) => {      
+                const dateA = `${ dayjs(a.date).format('YYYY-DD-MM').toString() } ${ a.hour }`;    
+                const dateB = `${ dayjs(b.date).format('YYYY-DD-MM').toString() } ${ b.hour }`
+                return dayjs(dateA).isAfter(dayjs(dateB)) 
+                ? 1 
+                : -1
+            });
         })
 
         return res;
