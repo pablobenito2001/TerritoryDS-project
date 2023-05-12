@@ -55,12 +55,13 @@ export const useTaskStore = defineStore('task', () => {
     }) 
 
     //*actions
-    function deleteTask(index: number): void{
+    function deleteTask(terr: number): void{
+        const index = tasks.value.findIndex(elem => elem.territory.nro === terr)
         tasks.value.splice(index, 1);
     }
 
     function addTask(task: TaskTerritory): void{  
-        tasks.value.push(task)
+        tasks.value.push(task);
     }
     
     function deleteExpiredTask(task: Ref<TaskTerritory[]>): void{
@@ -72,7 +73,8 @@ export const useTaskStore = defineStore('task', () => {
     }
 
     //*watcher
-    watch(() => tasks.value, () => {
+    watch(() => tasks.value, 
+    () => {
         LocalStorage.putData<TaskTerritory[]>(tasks.value, 'territoryTask');
         deleteExpiredTask(tasks);
     },

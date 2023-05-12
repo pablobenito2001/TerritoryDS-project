@@ -1,6 +1,5 @@
 import { defineStore, storeToRefs } from "pinia";
 import { ref, computed, watch } from 'vue';
-import { LocalStorage } from "../services/LocalStorage";
 import API from "../services/API";
 import { useTaskStore } from "./taskStore";
 import type Territory from "../interfaces/TaskInterface";
@@ -16,10 +15,13 @@ export const useTerritoryStore = defineStore('territory', () => {
         avaliableTask.value = avaliableTask.value.filter(elem => !tasks.value.some(task => task.territory.nro === elem.nro))
     })()
 
+    function searchAvailableTerritories(){
+        avaliableTask.value = avaliableTask.value.filter(elem => !tasks.value.some(task => task.territory.nro === elem.nro))
+    }
 
     watch(() => tasks.value, 
     () => {
-        avaliableTask.value = avaliableTask.value.filter(elem => !tasks.value.some(task => task.territory.nro === elem.nro))
+        searchAvailableTerritories()
     },
     {
         deep: true

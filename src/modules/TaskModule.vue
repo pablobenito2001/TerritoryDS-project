@@ -11,6 +11,8 @@
             :house="item.house"
             :expiration="item.expirationDate"
             :territory="item.territory"
+            :id="index"
+            @index="(id) => log(id)"
             />
         </template>
     </ListWrapperLayout>
@@ -25,7 +27,9 @@
 
     const store = useTaskStore();
     
-
+    function log(e: number){
+        store.deleteTask(e);
+    }
 </script>
 <styles lang='scss' scoped>
     .Task-noTask{

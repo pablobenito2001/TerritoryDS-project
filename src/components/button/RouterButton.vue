@@ -5,7 +5,7 @@
 </template>
 <script lang='ts' setup>
     interface Props{
-        to: string;
+        to: any;
     }
 
     const props = defineProps<Props>();
