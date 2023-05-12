@@ -1,16 +1,19 @@
 <template>
     <ListWrapperLayout>
-        <TaskListResume
-        v-for="(item, index) in store.getTask"
-        :key="index"
-        :id="index"
-        :day="item.date"
-        :hour="item.hour"
-        :territory="item.territory"
-        :captain="item.captain"
-        :house="item.house"
-        :expiration="item.expirationDate"
-        />
+        <span v-if="store.getLength === 0">No hay salidas creadas.</span>
+        <template v-else>
+            <TaskListResume
+            v-for="(item, index) in store.getTask"
+            :key="index"
+            :id="index"
+            :day="item.date"
+            :hour="item.hour"
+            :territory="item.territory"
+            :captain="item.captain"
+            :house="item.house"
+            :expiration="item.expirationDate"
+            />
+        </template>
     </ListWrapperLayout>
 </template>
 <script lang='ts' setup>

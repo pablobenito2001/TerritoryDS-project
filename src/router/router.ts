@@ -2,10 +2,10 @@ import Home from '../views/Home.vue';
 import TaskView from '../views/TaskView.vue';
 import ResumeView from '../views/ResumeView.vue';
 
-import TerritoryView from '../views/TerritoryView.vue';
 import CreateTaskView from '../views/CreateTaskView.vue';
 import ListResumeView from '../views/ListResumeView.vue';
 import TableResumeView from '../views/TableResumeView.vue';
+import NotFound from '../views/NotFound.vue';
 
 import { createRouter, createWebHistory } from 'vue-router';
 
@@ -42,11 +42,6 @@ const router = createRouter({
             ]
         },
         {
-            path: '/territory',
-            component: TerritoryView,
-            name: 'territory'
-        },
-        {
             path: '/create',
             component: CreateTaskView,
             name: 'create'
@@ -55,6 +50,11 @@ const router = createRouter({
             path: '/edit',
             component: CreateTaskView,
             name: 'edit'
+        },
+        {
+            path: '/:pathMatch(.*)*',
+            component: NotFound,
+            name: 'error_404'
         }
     ]
 })

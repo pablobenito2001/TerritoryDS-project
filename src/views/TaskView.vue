@@ -32,6 +32,12 @@
         &-dataText{
             font-weight: 500;
             font-size: 1.7em;
+            @media screen and (max-width: 800px) {
+                font-size: 1em;
+            }
+            @media screen and (max-width: 450px) {
+                display: none;
+            }
         }
         &-dataNumber{
             font-size: 2.2em;

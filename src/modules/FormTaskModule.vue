@@ -1,7 +1,7 @@
 <template>
     <div>
         <ButtonContainerLayout>
-            <RouterButton to="territory">Ver Mapa</RouterButton>
+            <MapButtonModal />
             <button @click.prevent="sendInfo" class="Form-button">Crear</button>
         </ButtonContainerLayout>
         <form action="#">
@@ -77,6 +77,7 @@
     //Componentes
     import RouterButton from '../components/button/RouterButton.vue';
     import ButtonContainerLayout from '../layout/ButtonContainerLayout.vue';
+    import MapButtonModal from '../components/button/MapButtonModal.vue';
     //
 
     //utils
@@ -101,7 +102,7 @@
         day: '',
         hour: '',
         captain: '',
-        territory: '',
+        territory: { nro: 0, streets: ["", ""] },
         house: '',
     })
     //
@@ -153,6 +154,9 @@
             justify-content: space-between;
             align-items: center;
             gap: 10px;
+            @media screen and (max-width: 450px) {
+                flex-wrap: wrap;
+            }
         }
         &-inputBox{
             width: 100%;

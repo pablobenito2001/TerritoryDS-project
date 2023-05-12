@@ -10,5 +10,6 @@
     .Home{
         min-height: 100vh;
         background-color: var(--red);
+        overflow: hidden;
     }
 </style>

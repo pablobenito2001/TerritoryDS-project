@@ -29,8 +29,10 @@ export const useTaskStore = defineStore('task', () => {
 
     const getGroup = computed<Group[]>(() => {
         let res: Group[] = [];
+        const a: TaskTerritory[] = [...tasks.value]
 
-        tasks.value.forEach(elem => {
+        a.sort((a, b) => dayjs(a.date).isAfter(dayjs(b.date)) ? 1 : -1)
+        a.forEach(elem => {
             const { date } = elem;
             const index = res.findIndex(index => index.groupName === date)
             if(index === -1){
@@ -39,9 +41,8 @@ export const useTaskStore = defineStore('task', () => {
                 res[index].items = [...res[index].items, elem]; 
             }
         })
-
         res.forEach(elem => {
-            elem.items.sort((a, b) => !dayjs(a.hour).isAfter(dayjs(b.hour)) ? 1 : -1)
+            elem.items.sort((a, b) => dayjs(a.hour).isAfter(dayjs(b.hour)) ? 1 : -1)
         })
 
         return res;

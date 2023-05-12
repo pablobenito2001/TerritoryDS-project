@@ -15,7 +15,8 @@
 </script>
 <styles lang='scss' scoped>
     .Table{
-        width: 100%;
+        overflow-x: auto;
+        min-width: 1300px;
         & th{
             background-color: var(--dark-red);
             padding: .9375rem;

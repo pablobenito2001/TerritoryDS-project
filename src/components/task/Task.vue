@@ -56,6 +56,11 @@
         line-height: normal;
         background-color: var(--dark-red);
         border-radius: .5rem;
+        @media screen and (max-width: 650px) {
+            align-items: flex-start;
+            flex-direction: column;
+            gap: .9375rem;
+        }
         &-dot{
             position: relative;
             align-self: flex-start;
@@ -68,11 +73,21 @@
                 border-radius: 100%;
                 top: 0;
             }
+            @media screen and (max-width: 650px) {
+                display: none;
+            }
         }
         &-infoBox{
             display: flex;
             align-items: center;
             gap: 1.25rem;
+            @media screen and (max-width: 650px) {
+                display: grid;  
+                grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+                grid-auto-rows: auto;
+                width: 100%;
+                gap: 20px;
+            }
         }
         &-title{
             font-size: 1.875em;

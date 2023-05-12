@@ -2,11 +2,10 @@
     <MainLayout>
         <div class="Home">
             <h1 class="Home-title">Salidas al Territorio</h1>
-            <h2 class="Home-date">{{ date }}</h2>
+            <TitleMain>{{ date }}</TitleMain>
             <div class="Home-btnBox">
                 <RouterButton to="">Inicio</RouterButton>
                 <RouterButton to="resume">Resumen</RouterButton>
-                <RouterButton to="territory">Mapa</RouterButton>
                 <RouterButton to="create" class="Home-mainBtn">Crear Salida</RouterButton>
             </div>
             <div class="Home-container">
@@ -16,6 +15,7 @@
     </MainLayout>
 </template>
 <script lang='ts' setup>    
+    import TitleMain from '../components/main/TitleMain.vue';
     import MainLayout from '../layout/MainLayout.vue';
     import RouterButton from '../components/button/RouterButton.vue';
 
@@ -35,15 +35,14 @@
             margin-bottom: 1.875rem;
             line-height: normal;
         }
-        &-date{
-            font-size: 4.06em;
-            color: var(--green);
-            line-height: normal;
-        }
         &-btnBox{
             display: flex;
             gap: 10px;
             justify-content: flex-end;
+            @media screen and (max-width: 450px){
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(max(150px, calc(100% / 4)), 1fr));
+            }
         }
         &-mainBtn{
             background-color: var(--green);
