@@ -1,12 +1,3 @@
-.DarkMode{
-    --dark-color--mode: #e7eff7; 
-    --ligth-color--mode: #222831;
-    --alpha-color--mode: #eeeeee1d;
-    --alpha-color-20--mode: #eeeeee1d;
-    --alpha-color-50--mode: #eeeeee7d;
-    --alpha-color-80--mode: #eeeeeebe;
-}
-
 .Theme{
     --ligth-color: #{map-get($colors, "white")};
     --dark-color: #{map-get($colors, "black")};
