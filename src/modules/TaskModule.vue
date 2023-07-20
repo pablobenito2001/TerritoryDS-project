@@ -23,7 +23,6 @@
     
     import 'dayjs/locale/es';
     import { useTaskStore } from '../store/taskStore';
-    import { storeToRefs } from 'pinia';
 
     const store = useTaskStore();
     

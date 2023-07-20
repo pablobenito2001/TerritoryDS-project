@@ -1,20 +1,22 @@
 <template>
-    <main class="Layout">
-        <div class="Layout-container">
+    <div class="Main">
+        <Nav class="Main-content"/>
+        <main class="Main-content">
             <slot />
-        </div>
-    </main>
+        </main>
+    </div>
 </template>
 <script lang='ts' setup>
-
+    import Nav from '../modules/Nav/Nav.vue';
 </script>
-<styles lang='scss' scoped>
-    .Layout{
-        min-height: 100vh;
-        padding: 13.125rem .625rem .625rem .625rem;
-        &-container{
-            max-width: 1300px;
-            margin: auto;
+<style lang='scss' scoped>
+    .Main{
+        display: grid;
+        grid-template-columns: 20% 1fr;
+        grid-template-rows: minmax(100vh, auto);
+        background-color: var(--ligth-color);
+        &-content{
+            padding: 4.375rem 1.875rem;
         }
     }
-</styles>
+</style>

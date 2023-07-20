@@ -27,6 +27,7 @@ export const useTaskStore = defineStore('task', () => {
     //?get length
     const getLength = computed<number>(() => tasks.value.length);
 
+    //?get group
     const getGroup = computed<Group[]>(() => {
         let res: Group[] = [];
         const a: TaskTerritory[] = [...tasks.value]

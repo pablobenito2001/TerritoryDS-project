@@ -1,0 +1,23 @@
+.DarkMode{
+    --dark-color--mode: #e7eff7; 
+    --ligth-color--mode: #222831;
+    --alpha-color--mode: #eeeeee1d;
+    --alpha-color-20--mode: #eeeeee1d;
+    --alpha-color-50--mode: #eeeeee7d;
+    --alpha-color-80--mode: #eeeeeebe;
+}
+
+.Theme{
+    --ligth-color: #{map-get($colors, "white")};
+    --dark-color: #{map-get($colors, "black")};
+    --alpha-20: #{map-get($alpha-colors, "alpha-20")};
+    --alpha-50: #{map-get($alpha-colors, "alpha-50")};
+    --alpha-80: #{map-get($alpha-colors, "alpha-80")};
+    &--dark{
+        --ligth-color: #{map-get($darked-colors, "black")};
+        --dark-color: #{map-get($darked-colors, "white")};
+        --alpha-20: #{map-get($darked-colors, "alpha-20")};
+        --alpha-50: #{map-get($darked-colors, "alpha-50")};
+        --alpha-80: #{map-get($darked-colors, "alpha-80")};
+    }
+}
