@@ -1,14 +1,64 @@
-.Theme{
-    --ligth-color: #{map-get($colors, "white")};
-    --dark-color: #{map-get($colors, "black")};
-    --alpha-20: #{map-get($alpha-colors, "alpha-20")};
-    --alpha-50: #{map-get($alpha-colors, "alpha-50")};
-    --alpha-80: #{map-get($alpha-colors, "alpha-80")};
-    &--dark{
-        --ligth-color: #{map-get($darked-colors, "black")};
-        --dark-color: #{map-get($darked-colors, "white")};
-        --alpha-20: #{map-get($darked-colors, "alpha-20")};
-        --alpha-50: #{map-get($darked-colors, "alpha-50")};
-        --alpha-80: #{map-get($darked-colors, "alpha-80")};
-    }
+.Yellow-bg{
+    background-color: map-get($colors, "secundary-one");
+}
+.Blue-bg{
+    background-color: map-get($colors, "secundary-two");
+}
+.Black-bg{
+    background-color: map-get($colors, "black");
+}
+
+.Yellow-fill{
+    fill: map-get($colors, "secundary-one");
+}
+.Blue-fill{
+    fill: map-get($colors, "secundary-two");
+}
+.Black-fill{
+    fill: map-get($colors, "black");
+}
+.White-fill{
+    fill: map-get($colors, "white");
+}
+
+.Yellow-font{
+    color: map-get($colors, "secundary-one");
+}
+.Blue-font{
+    color: map-get($colors, "secundary-two");
+}
+.Black-font{
+    color: map-get($colors, "black");
+}
+.Grey-font{
+    color: map-get($colors, "grey");
+}
+.White-font{
+    color: map-get($colors, "white");
+}
+
+.font_xs{
+    font-size: map-get($font_size, "xs");
+}
+.font_l{
+    font-size: map-get($font_size, "l");
+}
+.font_s{
+    font-size: map-get($font_size, "s");
+}
+.font_m{
+    font-size: map-get($font_size, "m");
+}
+.font_xl{
+    font-size: map-get($font_size, "xl");
+}
+.font_xxl{
+    font-size: map-get($font_size, "xxl");
+}
+.font_xxxl{
+    font-size: map-get($font_size, "xxxl");
+}
+
+.font_line_100{
+    line-height: 100%;
 }

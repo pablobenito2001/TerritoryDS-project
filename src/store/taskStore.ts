@@ -10,18 +10,16 @@ dayjs.extend(isSameOrBefore);
 
 export const useTaskStore = defineStore('task', () => {
     //*states
-    const tasks = ref<TaskTerritory[]>([]);
-    tasks.value = LocalStorage.getData<TaskTerritory>('territoryTask');
-    deleteExpiredTask(tasks);
+    const tasks = ref<TaskTerritory[]>(LocalStorage.getData('territoryTask'));
+    deleteExpiredTask();
 
     //*getters
+    //?get tasks
     const getTask = computed<TaskTerritory[]>((): TaskTerritory[] => {
         let sort: TaskTerritory[] = [...tasks.value];
-
+        
         //?sorted the dates
-        sort.sort((a, b) => dayjs(a.date).isAfter(dayjs(b.date)) ? 1 : -1)
-
-        return sort
+        return sort.sort((a, b) => dayjs(a.date).isAfter(dayjs(b.date)) ? 1 : -1)
     });
 
     //?get length
@@ -36,11 +34,9 @@ export const useTaskStore = defineStore('task', () => {
         a.forEach(elem => {
             const { date } = elem;
             const index = res.findIndex(index => index.groupName === date)
-            if(index === -1){
-                res.push({groupName: date, items: [elem]})
-            }else{
-                res[index].items = [...res[index].items, elem]; 
-            }
+            index === -1 
+            ? res.push({groupName: date, items: [elem]}) 
+            : res[index].items = [...res[index].items, elem]; 
         })
         res.forEach(elem => {
             elem.items.sort((a, b) => {      
@@ -56,8 +52,7 @@ export const useTaskStore = defineStore('task', () => {
     }) 
 
     //*actions
-    function deleteTask(terr: number): void{
-        const index = tasks.value.findIndex(elem => elem.territory.nro === terr)
+    function deleteTask(index: number): void{
         tasks.value.splice(index, 1);
     }
 
@@ -65,10 +60,10 @@ export const useTaskStore = defineStore('task', () => {
         tasks.value.push(task);
     }
     
-    function deleteExpiredTask(task: Ref<TaskTerritory[]>): void{
-        for (let i = 0; i < task.value.length; i++) {
-            if(!dayjs().isSameOrBefore(task.value[i].expirationDate)){
-                task.value.splice(i, 1);
+    function deleteExpiredTask(): void{
+        for (let i = 0; i < tasks.value.length; i++) {
+            if(!dayjs().isSameOrBefore(tasks.value[i].expirationDate)){
+                tasks.value.splice(i, 1);
             }
         }
     }
@@ -77,7 +72,7 @@ export const useTaskStore = defineStore('task', () => {
     watch(() => tasks.value, 
     () => {
         LocalStorage.putData<TaskTerritory[]>(tasks.value, 'territoryTask');
-        deleteExpiredTask(tasks);
+        deleteExpiredTask();
     },
     {
         deep: true

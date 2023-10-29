@@ -4,7 +4,7 @@
             <div class="Task-dot"></div>
             <div class="Task-info">
                 <h3 class="Task-title">Salida</h3>
-                <span class="Task-text">{{ day }}</span>
+                <span class="Task-text">{{ props.day }}</span>
             </div>
             <div class="Task-info">
                 <h3 class="Task-title">Salida</h3>

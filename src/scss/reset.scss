@@ -11,7 +11,8 @@ body {
     min-height: 100vh;
     font-size: 100%;
     font-family: map-get($font, "principal"), Courier, monospace;
-    color: map-get($colors, "negro");
+    color: map-get($colors, "black");
+    background-color: map-get($colors, "white");
     line-height: 1.4em;
     -webkit-hyphens: auto;
         -ms-hyphens: auto;

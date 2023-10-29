@@ -3,9 +3,10 @@ export const LocalStorage = {
         const json = JSON.stringify(data)
         localStorage.setItem(name, json);
     },
-    getData: <T>(name: string): T[] => {
+    getData: (name: string) => {
         if (localStorage.getItem(name)) {
-            return JSON.parse(localStorage.getItem(name) || "")
+            let ret = JSON.parse(localStorage.getItem(name) || "");
+            return ret;
         }else{
             return []
         }
