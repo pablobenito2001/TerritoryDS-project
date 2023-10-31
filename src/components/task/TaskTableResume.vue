@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
     <tr
     v-for="(item, index) in props.group.items"
     :key="item.territory.nro"
@@ -13,10 +13,10 @@
 <script setup lang="ts">
     import { computed } from 'vue';
     import dayjs from 'dayjs';
-    import type TaskTerritory from '../../interfaces/TaskTerritory';
+    import type Task from '../../interfaces/Task';
 
     interface Props{
-        group: { groupName: string, items: TaskTerritory[] }
+        group: { groupName: string, items: Task[] }
     }
 
     const props = defineProps<Props>()
@@ -25,4 +25,4 @@
 </script>   
 <styles lang='scss' scoped>
 
-</styles>
+</styles>../../interfaces/Task -->

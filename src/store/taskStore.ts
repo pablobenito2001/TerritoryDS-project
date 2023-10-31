@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia';
 import { computed, Ref, ref, watch } from 'vue';
 import { LocalStorage } from '../services/LocalStorage';
-import type TaskTerritory from '../interfaces/TaskTerritory';
+import type TaskTerritory from '../interfaces/Task';
 import type Group from '../interfaces/Group';
 import dayjs from 'dayjs';
 import isSameOrBefore from 'dayjs/plugin/isSameOrBefore';

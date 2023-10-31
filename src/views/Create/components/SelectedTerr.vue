@@ -1,13 +1,14 @@
 <template>
-    <TransitionGroup tag="ul" class="SelectedTerr" name="list">
+    <TransitionGroup tag="ul" class="SelectedTerr" name="list" v-if="props.terr.length !== 0">
         <li
         v-for="item in props.terr"
-        class="SelectedTerr-item"
-        >
+        class="SelectedTerr-item" 
+        :key="item">
             <span>Territorio</span>
             <span>{{ item }}</span>
-    </li>
+        </li>
     </TransitionGroup>
+    <span v-else class="SelectedTerr-none">Territorios no seleccionados.</span>
 </template>
 <script lang='ts' setup>
     interface Props{
@@ -26,11 +27,14 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            border: 2px solid map-get($colors, "black");
-            border-radius: .3125rem;
-            &:hover{
-                border: 2px solid map-get($colors, "secundary-two");
-            }
+            border: .125rem solid map-get($colors,"black");
+            box-shadow: .25rem .25rem 0 0 map-get($colors, "black");
+            border-radius: .25rem;
+        }
+        &-none{
+            display: inline-block;
+            width: 100%;
+            text-align: center;
         }
     }
 

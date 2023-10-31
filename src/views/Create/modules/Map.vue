@@ -1937,6 +1937,7 @@
 </script>
 <style lang='scss' scoped>
     .Map{
+        height: 100vh;
         &-section{
             cursor: pointer;
             transition: stroke 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -1949,4 +1950,4 @@
             transition: fill 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
         }
     }
-</style>../../../composable/useAdminQuery
+</style>

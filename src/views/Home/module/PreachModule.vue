@@ -15,7 +15,6 @@
 <script lang='ts' setup>
     import PreachCardLayout from '../layout/PreachCardLayout.vue';
     import PreachCard from '../components/PreachCard.vue';
-    import { storeToRefs } from 'pinia';
 
     import { useTaskStore } from '../../../store/taskStore';
 

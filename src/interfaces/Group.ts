@@ -1,4 +1,4 @@
-import type TaskTerritory from "./TaskTerritory";
+import type TaskTerritory from "./Task";
 
 export default interface Group{
     groupName: string;

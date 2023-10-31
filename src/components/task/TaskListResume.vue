@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
     <li class="TaskResume">
         <div class="TaskResume-box">
             <h3 class="TaskResume-title">Dia:</h3>
@@ -68,4 +68,4 @@
             border-radius: .3125rem;
         }
     }
-</styles>
+</styles> -->

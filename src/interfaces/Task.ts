@@ -1,7 +1,6 @@
-import type Territory from "./TaskInterface";
 import type { Dayjs } from "dayjs";
 
-export default interface TaskTerritory{
+export default interface Task{
     captain: string;
     date: string;
     hour: string;
