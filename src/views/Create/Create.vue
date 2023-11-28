@@ -14,5 +14,8 @@
         grid-template-columns: 1fr 30%;
         grid-template-rows: 100vh;
         overflow: hidden;
+        @media screen and (max-width: #{ map-get($breackpoints, "medium") }) {
+            grid-template-columns: 1fr;
+        }
     }
 </style>

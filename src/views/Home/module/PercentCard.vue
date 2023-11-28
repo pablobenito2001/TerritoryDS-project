@@ -27,9 +27,7 @@
         }
         &-content{
             position: relative;
-            @media screen and (max-width: #{ map-get($breackpoints, "large") }) {
-                height: 100%;
-            }
+            height: calc(100% - (map-get($sizes, "padding") * 2));
         }
         &-svg{
             height: calc($svg-size + $stroke-width);

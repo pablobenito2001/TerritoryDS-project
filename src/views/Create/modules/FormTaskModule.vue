@@ -1,5 +1,6 @@
 <template>
-    <div class="FormCreate">
+    <button class="FormCreate-button" @click="() => open = !open">X</button>
+    <div class="FormCreate" :class="{ 'Open': open }">
         <form action="#" class="FormCreate-box">
             <span class="font_xl Yellow-font font_line_100 FormCreate-title">Crear Salida</span>
             <div class="FormCreate-section">
@@ -53,6 +54,7 @@
     const hour = ref<string>('');
     const house = ref<string>('');
     const captain = ref<string>('');
+    const open = ref<boolean>(true);
     const queryParams = ref<number[]>([]);
     const useRouter = useRoute();
 
@@ -65,7 +67,7 @@
     });
 </script>
 <styles lang='scss' scoped>
-    $max-size-svg: 25px;
+    $max-size-svg: 1.5625rem;
 
     .FormCreate{
         display: flex;
@@ -73,7 +75,10 @@
         justify-content: space-between;
         gap: map-get($sizes, "gap");
         padding: map-get($sizes, "padding");
-        border-left: 2px solid map-get($colors, "grey");
+        overflow-y: auto;
+        @media screen and (min-width: #{ map-get($breackpoints, "medium")} ) {
+            border-left: 2px solid map-get($colors, "grey");
+        }
         &-title{
             display: inline-block;
             margin-bottom: 1.25rem;
@@ -93,5 +98,18 @@
             max-width: $max-size-svg;
             max-height: $max-size-svg;
         }
+        &-button{
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            background-color: red;
+            padding: 10px;
+        }
     }
-</styles>   ../../../composable/useAdminQuery
+
+    .Open{
+        @media screen and (max-width: #{ map-get($breackpoints, "medium") }) {
+            display: none;
+        }
+    }
+</styles>
