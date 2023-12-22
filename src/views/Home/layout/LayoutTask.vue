@@ -1,5 +1,5 @@
 <template>
-    <div class="PreachLayout">
+    <div class="LayoutTask">
         <slot />
     </div>
 </template>
@@ -7,10 +7,10 @@
 
 </script>
 <style lang='scss' scoped>
-    .PreachLayout{
+    .LayoutTask{
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-auto-rows: 9.375rem;
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
         gap: map-get($sizes, "gap");
     }
 </style>

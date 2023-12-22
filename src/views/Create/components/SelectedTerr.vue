@@ -5,7 +5,7 @@
         class="SelectedTerr-item" 
         :key="item">
             <span>Territorio</span>
-            <span>{{ item }}</span>
+            <span class="font_xl font_line_100">{{ item }}</span>
         </li>
     </TransitionGroup>
     <span v-else class="SelectedTerr-none">Territorios no seleccionados.</span>
@@ -20,16 +20,17 @@
     .SelectedTerr{
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        grid-auto-rows: 6.25rem;
+        grid-auto-rows: auto;
         gap: map-get($sizes, "gap");
         &-item{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            border: .125rem solid map-get($colors,"black");
-            box-shadow: .25rem .25rem 0 0 map-get($colors, "black");
-            border-radius: .25rem;
+            display: grid;
+            place-content: center center;
+            text-align: center;
+            background-color: map-get($colors, "secundary-one");
+            border-radius: calc(map-get($sizes, "border-radius") - map-get($sizes, "padding"));
+            padding: map-get($sizes, "padding");
+            box-shadow: 0 0 8px 0px map-get($colors, "secundary-one");
+            line-height: 100%;
         }
         &-none{
             display: inline-block;

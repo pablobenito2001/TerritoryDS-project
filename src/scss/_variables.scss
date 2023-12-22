@@ -1,20 +1,19 @@
 $colors: (
-    "black": #252525,
-    "white": #ffffff,
-    "grey": #848484,
-    "secundary-one": #f9b806,
-    "secundary-two": #2751F5,
+    "black": #212121,
+    "white": #f1efef,
+    "ligth_black": #3B3B3B,
+    "secundary-one": #FF5151,
+    "secundary-two": #08D9D6,
 );
 
 $font: (
-    "principal": 'Karla',
-    "secundary": 'Inconsolata'
+    "principal": 'Kdam Thmor Pro',
 );
 
 $sizes: (
     "padding": .9375rem,
-    "border-radius": .3125rem,
-    "gap": 1.25rem,
+    "border-radius": 1.5625rem,
+    "gap": .9375rem,
     "shadow-size-x": .25rem,
     "shadow-size-y": .25rem,
 );
@@ -30,7 +29,7 @@ $font_size: (
 
 $breackpoints: (
     "small": 480px,
-    "medium": 768px,
+    "medium": 650px,
     "large": 1024px,
     "largeXL": 1440px
 );

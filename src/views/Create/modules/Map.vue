@@ -1938,15 +1938,19 @@
 <style lang='scss' scoped>
     .Map{
         height: 100vh;
+        width: 100%;
         &-section{
             cursor: pointer;
             transition: stroke 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
+            path:nth-child(1){
+                fill: map-get($colors, "ligth_black");
+            }
+            &:hover path:nth-child(1){
+                fill: map-get($colors, "secundary-one");    
+            }
         }
-        &-section:hover{
-            stroke: map-get($colors, "secundary-two");
-        }
-        &-selected > path:first-child{
-            fill: map-get($colors, "secundary-two");
+        &-selected path:first-child{
+            fill: map-get($colors, "secundary-one");
             transition: fill 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
         }
     }

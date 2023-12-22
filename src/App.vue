@@ -2,8 +2,12 @@
     import MainLayout from './layout/MainLayout.vue';
 </script>
 <template>  
-	<router-view />
+	<main class="Main">
+        <router-view />
+    </main>
 </template>
 <style scoped lang="scss">
-
+    .Main{
+        background-color: map-get($colors, "black");
+    }
 </style>

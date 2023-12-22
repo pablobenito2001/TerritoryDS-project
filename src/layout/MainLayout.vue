@@ -1,19 +1,19 @@
 <template>
-    <main class="Main">
+    <div class="Main">
         <slot />
-    </main>
+    </div>
 </template>
 <script lang='ts' setup>
 
 </script>
 <style lang='scss' scoped>
     .Main{
-        display: flex;
-        flex-direction: column;
-        gap: map-get($sizes, "padding");
+        display: grid;
+        align-content: flex-start;
+        gap: map-get($sizes, "gap");
         max-width: 64rem;
         margin: auto;
         min-height: 100vh;
-        padding: .9375rem;
+        padding: map-get($sizes, "padding");
     }
 </style>
