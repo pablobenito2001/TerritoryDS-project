@@ -1,6 +1,6 @@
 <template>
     <svg 
-        @click="mainFunction"
+        @click="selectedTerritory"
         viewBox="0 0 2171 2749"
         fill="none"
         class="Map"
@@ -1890,14 +1890,16 @@
     </svg>
 </template>
 <script lang='ts' setup>
-    import { ref ,onMounted, watch } from 'vue';
+    import { ref ,onMounted, watch, ComputedRef } from 'vue';
     import router from '../../../router/router';
+    import { useServiceStore } from '../../../store/taskStore';
+    import { storeToRefs } from 'pinia';
 
     const queryParams = ref<Set<number>>(new Set());
-    const separatorQuery = ',';
-    const maxTerritories = 6;
 
-    function mainFunction(e: MouseEvent){
+    // main function
+    const maxTerritories = 6;
+    function selectedTerritory(e: MouseEvent){
         const node: HTMLElement = <HTMLElement>(<HTMLElement>e.target).parentElement;
         const nodeId: number = Number(node.id);
         if(nodeId > 63 || nodeId < 0){
@@ -1905,35 +1907,45 @@
             return;
         }
         
-        if(node.nodeName === 'g' && !queryParams.value.has(nodeId) && queryParams.value.size < maxTerritories){
-            queryParams.value.add(nodeId)
-        }else{
-            queryParams.value.delete(nodeId);
-        }
-    }
-
-    function assignClass(){
-        const fatherElement: HTMLElement = document.getElementById('father') as HTMLElement;
-        fatherElement.childNodes.forEach((elem: Node) => {
-            const NodeElement: HTMLElement = <HTMLElement>elem;
-            NodeElement.classList.toggle('Map-selected', queryParams.value.has(Number(NodeElement.id)));
-        });
+        if(node.nodeName === 'g' && !queryParams.value.has(nodeId) && queryParams.value.size < maxTerritories) queryParams.value.add(nodeId)
+        else queryParams.value.delete(nodeId);
         
     }
 
+    // query assignament
+    const separatorQuery = ',';
     watch(
     () => queryParams.value,
     () => {
         queryParams.value.size > 0 ? router.replace({query: { terr: Array.from(queryParams.value).join(separatorQuery) }}) : router.replace({query: { terr: undefined }});
-        assignClass();
+        assignClass('Map-selected', (e) => queryParams.value.has(Number(e)));
     },
     {
         deep: true
     })
 
+    // reset query params
     onMounted(() => {
        router.replace({query: { terr: undefined }}) 
     });
+
+    // used territorys
+    onMounted(() => {
+        const store = storeToRefs(useServiceStore());
+
+        const usedTerritorys: ComputedRef<number[]> = store.usedTerritories;
+        assignClass('Map-used', (e) => usedTerritorys.value.some((elem: number) => elem === e))
+    })
+
+    // class assignment function
+    function assignClass(className: string, cb: (e: number) => boolean){
+        //cb(e: id's element)
+        const fatherElement: HTMLElement = document.getElementById('father') as HTMLElement;
+        fatherElement.childNodes.forEach((elem: Node) => {
+            const NodeElement: HTMLElement = <HTMLElement>elem;
+            NodeElement.classList.toggle(className, cb(Number(NodeElement.id)));
+        });
+    }
 </script>
 <style lang='scss' scoped>
     .Map{
@@ -1942,16 +1954,20 @@
         &-section{
             cursor: pointer;
             transition: stroke 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
-            path:nth-child(1){
+            path:first-child{
                 fill: map-get($colors, "ligth_black");
             }
-            &:hover path:nth-child(1){
+            &:hover path:first-child{
                 fill: map-get($colors, "secundary-one");    
             }
         }
         &-selected path:first-child{
             fill: map-get($colors, "secundary-one");
             transition: fill 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+        &-used path{
+            fill: #777777;
+            pointer-events: none;
         }
     }
 </style>

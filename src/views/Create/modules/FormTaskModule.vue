@@ -10,25 +10,25 @@
                 <label for="captain" class="FormCreate-label">
                     Seleccione un Capitán:
                 </label>                
-                <Select id="captain" name="Capitan" :elements="optionsCaptain"/>
+                <Select id="captain" name="Capitan" :elements="optionsCaptain" v-model:value="captain"/>
             </div>
             <div class="FormCreate-section">
                 <label for="hour" class="FormCreate-label">
                     Seleccione una Hora:
                 </label>
-                <Select id="hour" name="Hora" :elements="optionsHour"/>
+                <Select id="hour" name="Hora" :elements="optionsHour" v-model:value="hour"/>
             </div>
             <div class="FormCreate-section">
                 <label for="house" class="FormCreate-label">
                     Seleccione Lugar de Salida:
                 </label>
-                <Select id="house" name="Lugar de Salida" :elements="optionsHouse"/>
+                <Select id="house" name="Lugar de Salida" :elements="optionsHouse" v-model:value="house"/>
             </div>
             <div class="FormCreate-section">
                 <label for="date" class="FormCreate-label">
                     Seleccione un Dia:
                 </label>
-                <Input id="date" type="date"/> 
+                <Input id="date" type="date" v-model:value="day"/> 
             </div>
             <div class="FormCreate-section">
                 <label for="hour" class="FormCreate-label">
@@ -37,31 +37,60 @@
                 <SelectedTerr :terr="queryParams"/>
             </div>
         </form>
-        <GeneralButton class="FormCreate-button">Crear</GeneralButton>
+        <GlobalButton class="FormCreate-button" @click="createTask">Crear</GlobalButton>
     </div>
 </template>
 <script lang='ts' setup>
     import SelectedTerr from '../components/SelectedTerr.vue';
     import Select from '../../../components/Input/Select.vue';
     import Input from '../../../components/Input/Input.vue';
-    import GeneralButton from '../../../components/button/GeneralButton.vue';
+    import GlobalButton from '../../../components/button/GlobalButton.vue';
     import { optionsCaptain, optionsHour, optionsHouse } from '../../../const/SelectOptions';
     import { ref, watch } from 'vue';
     import { useRoute } from 'vue-router';
+    import router from '../../../router/router';
+    import type Service from '../../../interfaces/Service';
+    import dayjs from 'dayjs';
+    import { useServiceStore } from '../../../store/taskStore';
+    import { generateID } from '../../../utils/generateID';
 
+    // form data
+    const captain = ref<string>('');
     const hour = ref<string>('');
     const house = ref<string>('');
-    const captain = ref<string>('');
+    const day = ref<string>('');
+
     const open = ref<boolean>(true);
     const queryParams = ref<number[]>([]);
     const useRouter = useRoute();
+    const store = useServiceStore();
 
+    // validation & creation
+
+    function createTask(e: MouseEvent){
+        if(captain.value !== '' && hour.value !== '' && house.value !== '' && day.value !== ''){
+            const task: Service = {
+                id: generateID(store.usedIDs),
+                captain: captain.value,
+                hour: hour.value,
+                house: house.value,
+                date: dayjs(day.value).toString(),
+                territory: queryParams.value,
+                creationDate: dayjs().toString(),
+                expirationDate: dayjs(day.value).add(3, 'week').add(1, 'day').toString(),
+            };
+            console.log(store.addService(task));
+            // router.push('/');
+        }
+    };
+
+    // selected territories *from query params*
     watch(
-    () => useRouter.query,
-    () => {
-        const query: number[] | boolean = typeof (useRouter.query.terr) === 'string' && (<string>useRouter.query.terr).split(',').map((elem: string) => Number(elem));
-
-        Array.isArray(query) ? queryParams.value = [...query] : queryParams.value = []; 
+        () => useRouter.query,
+        () => {
+            const query: number[] | boolean = typeof (useRouter.query.terr) === 'string' && (<string>useRouter.query.terr).split(',').map((elem: string) => Number(elem));
+                
+                Array.isArray(query) ? queryParams.value = [...query] : queryParams.value = []; 
     });
 </script>
 <styles lang='scss' scoped>
@@ -80,8 +109,8 @@
             background-color: map-get($colors, "ligth_black");
         }
         &-layout{
-            display: grid;
-            align-content: flex-start;
+            display: flex;
+            flex-direction: column;
             gap: map-get($sizes, "gap");
         }
         &-label{
@@ -90,6 +119,10 @@
             margin-bottom: .3125rem;
             font-weight: bolder;
             color: map-get($colors, "grey");
+            font-size: 0.8em;
+        }
+        &-button{
+            justify-self: flex-end;
         }
     }
 
@@ -98,4 +131,4 @@
             display: none;
         }
     }
-</styles>
+</styles>../../../interfaces/Service

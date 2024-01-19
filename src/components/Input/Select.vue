@@ -1,5 +1,5 @@
 <template>
-    <select :name="props.name" :id="props.id" class="Select">
+    <select :name="props.name" :id="props.id" class="Select" @change="emitSelect">
         <option disabled selected class="Select-option">{{ props.name }}</option>
         <option 
         v-for="(item, index) in props.elements"
@@ -17,8 +17,19 @@
         elements: Option[];
         name: string;
         id: string;
+        value: string;
     }
     const props = defineProps<Props>();
+
+    // emit
+    const emit = defineEmits<{
+        (e: 'update:value', value: string): void
+    }>()
+
+    function emitSelect(e: Event){
+        const value = (e.target as HTMLSelectElement).value
+        emit('update:value', value);
+    }
 </script>
 <style lang='scss' scoped>
     .Select{

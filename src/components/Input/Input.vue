@@ -1,12 +1,21 @@
 <template>
-    <input :type="props.type" :id="props.id" class="Input">
+    <input :type="props.type" :id="props.id" class="Input" @input="sendValue">
 </template>
 <script lang='ts' setup>
     interface Props{
         type: string;
         id: string;
+        value: string;
     }
     const props = defineProps<Props>();
+    const emit = defineEmits<{
+        (e: 'update:value', value: string): void
+    }>();
+
+    function sendValue(e: Event){
+        const value = (e.target as HTMLInputElement).value;
+        emit('update:value', value.toLocaleLowerCase());
+    }
 </script>
 <style lang='scss' scoped>
     .Input{

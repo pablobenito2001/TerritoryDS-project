@@ -1,6 +1,6 @@
 <template>
     <div class="CardWrapper">
-        <CardHome class="CardWrapper-card" :icon="homeLogo" text-size="3">23 de Noviebre<br>del 2023</CardHome>
+        <CardHome class="CardWrapper-card" :icon="homeLogo" text-size="3">{{ date.format('DD') }} de {{ date.format('MMMM') }}<br>del {{ date.format('YYYY') }}</CardHome>
         <CardHome class="CardWrapper-card CardWrapper-card--select" :icon="calendar" text-size="2" @click="() => router.push('/create')">Crear Salida</CardHome>
         <CardHome class="CardWrapper-card CardWrapper-card--select" :icon="list" text-size="2">Resumen</CardHome>
     </div>
@@ -11,6 +11,13 @@
     import homeLogo from '../../../assets/home.svg';
     import calendar from '../../../assets/calendar.svg';
     import list from '../../../assets/list.svg';
+    import dayjs from 'dayjs';
+    import 'dayjs/locale/es';
+    import localizedFormat from 'dayjs/plugin/localizedFormat';
+
+    dayjs.locale('es');
+    dayjs.extend(localizedFormat);
+    const date = dayjs()
 </script>
 <style lang='scss' scoped>
     @keyframes cardAnimation_1{
@@ -45,6 +52,7 @@
         }
         &-card{
             cursor: pointer;
+            text-transform: capitalize;
             &:nth-child(1){
                 background-image: url("data:image/svg+xml,%3Csvg width='15' height='15' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='white' fill-opacity='0.16' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
                 background-color: map-get($colors, "secundary-one");

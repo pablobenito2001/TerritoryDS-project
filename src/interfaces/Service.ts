@@ -1,6 +1,5 @@
-import type { Dayjs } from "dayjs";
-
-export default interface Task{
+export default interface Service{
+    id: number;
     captain: string;
     date: string;
     hour: string;

@@ -6,7 +6,6 @@
 </script>
 <style lang='scss' scoped>
     .Button{
-        display: inline-block;
         width: 100%;
         background-color: map-get($colors, "secundary-one");
         border-radius: calc(map-get($sizes, "border-radius") -  map-get($sizes, "padding"));
